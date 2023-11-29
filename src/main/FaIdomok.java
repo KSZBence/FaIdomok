@@ -16,6 +16,10 @@ public class FaIdomok {
     private ArrayList<FaIdom> idomok;
     public FaIdomok() {
         this.idomok = new ArrayList<>();
+        Gomb g1 = new Gomb(2);
+        Hasab h1 = new Hasab(2, 2, 1);
+        idomok.add(g1);
+        idomok.add(h1);
     }
     
     public static void main(String[] args) {
@@ -23,14 +27,14 @@ public class FaIdomok {
     }
     
     public void run(){
-        Gomb g1 = new Gomb(2);
-        Hasab h1 = new Hasab(2, 2, 1);
-        idomok.add(g1);
-        idomok.add(h1);
+        System.out.println("Idomok:");
+        for (FaIdom faIdom : idomok) {
+            System.out.println(faIdom);
+        }
         System.out.println("összsuly: "+osszSuly());
         System.out.println("ossz gömb suly: "+osszGombSuly());
-        System.out.println("minimum térfogat: "+minV());
-        System.out.println("maximum térfogat: "+maxV());
+        System.out.println("minimum térfogat: "+minV()+" tipusa: " + minV().getClass().getSimpleName());
+        System.out.println("maximum térfogat: "+maxV()+ " tipusa: " + maxV().getClass().getSimpleName());
     }
     
     public double osszSuly(){
